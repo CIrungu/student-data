@@ -5,31 +5,17 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
 
-public class Studentservice {
-
-public List<Student> findAllStudents() {
-    return List.of(
-            new Student(
-                    "clement",
-                    "see",
-                    "clemet@gmail.com",
-                    32
-
-            ),
+public interface Studentservice {
 
 
-            new Student(
-                    "studii2",
-                    "mwas",
-                    "mwast@gmail.com",
-                    36
+    Student save (Student S);
 
-            )
-    );
+    List<Student> findAllStudents() ;
 
+    Student findByEmail(String Email);
 
+    Student update(Student S);
+
+    void delete(String EmaIL);
 }
-}
-
