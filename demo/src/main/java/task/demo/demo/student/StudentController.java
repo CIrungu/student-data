@@ -1,6 +1,7 @@
 package task.demo.demo.student;
 
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,7 +13,8 @@ public class StudentController {
     private Studentservice service ;
 
 
-    public StudentController(Studentservice service) {
+    public StudentController(
+            @Qualifier("DB")Studentservice service) {
         this.service = service;
     }
 
@@ -30,6 +32,7 @@ public class StudentController {
 
     @GetMapping
     public List<Student> findAllStudent() {
+
         return service.findAllStudents();
     }
 

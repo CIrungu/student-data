@@ -1,1 +1,7 @@
-spring.application.name=demo
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5433/student_db
+    username: postgres
+    password: Cleymoh2362
+    driver-class-name: org.postgresql.Driver
+

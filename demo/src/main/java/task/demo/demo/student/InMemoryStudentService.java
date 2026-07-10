@@ -9,7 +9,7 @@ import java.util.List;
 
 
 
-@Service
+@Service("Im")
 public  class InMemoryStudentService implements Studentservice {
 
 
