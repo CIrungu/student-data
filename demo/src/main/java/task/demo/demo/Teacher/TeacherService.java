@@ -4,28 +4,26 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
-public class TeacherService {
 
-    public List<TeacherEntity> findAllTeachers() {
-        return List.of(
-                new TeacherEntity(
+public interface TeacherService {
 
-                        "Clement",
-                        "Mwangi",
-                        37636566,
-                        "irungucleymoh@gmail.com"
-                ),
+    TeacherEntity save (TeacherEntity T);
 
-                new TeacherEntity(
-                        "Avril",
-                        "Irungu",
-                        23023501,
-                        "irunguclymoh@gmail.com"
-                )
-        );
-    }
+    TeacherEntity findByEmail(String email);
+
+
+    TeacherEntity update (TeacherEntity T);
+
+
+    List<TeacherEntity> findAllTeachers();
+
+    Void delete (String email);
+
 }
+
+
+
+
 
 
 
